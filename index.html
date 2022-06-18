@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Neyen Aponte</title>
     <link rel="stylesheet" href="font-awesome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Oswald:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -22,7 +25,16 @@
         </nav>
     </header>
     <!-- Inicio de mi portafolio-->
-    <div id="inicio" class="cuerpo inicio page-visible">Inicio</div>
+    <div id="inicio" class="cuerpo inicio page-visible">
+        <div class="centro vertical-center">
+            <img src="images/foto perfil.png" align="left" />
+            <h1 class="header">Neyen Aponte</h1>
+            <h2 class="anothers">Tec. Sup. En Programación</h2>
+            <h2 class="anothers">Desarrollador de Sistemas</h2>
+            <h2 class="anothers">BackEnd & FrontEnd</h2>
+            <a href="documents/Curriculum_Completo.pdf" target="_blank" class="btnDownload">Curriculum <i class="fa-solid fa-download"></i></a>
+        </div>
+    </div>
     <div id="about" class="cuerpo about">Sobre Mi</div>
     <div id="projects" class="cuerpo projects">Proyectos</div>
     <div id="contact" class="cuerpo contact">Contacto</div>
@@ -48,6 +60,41 @@
     body{
         padding: 0;
         margin: 0;
+    }
+    .header{
+        font-family: 'Fascinate', cursive;
+        color:#aae3d0;
+        text-shadow: 5px 5px 5px #000;
+    }
+    .btnDownload{
+        border: 2px solid rgb(5, 6, 3);
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: rgb(181, 211, 234);
+        color: rgb(5, 6, 3);
+    }
+    .btnDownload:hover{
+        background-color: rgb(141, 188, 224);
+        color: rgb(29, 34, 19);
+        transition: 0.5s;
+    }
+    .anothers{
+        font-family: 'Oswald', sans-serif;
+        color: rgb(221, 230, 213);
+        text-shadow: 5px 5px 5px #000;
+    }
+    .centro{
+        background-color: rgba(0,0,0,.2);
+        width: 50%;
+        height: 50%;
+        left: 25%;
+    }
+    .centro img{
+        top:0;
+        width:50%;
+        height:100%;
+        object-fit:cover;
     }
     .cuerpo{
         position: absolute;
