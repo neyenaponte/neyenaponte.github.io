@@ -12,18 +12,21 @@
         <nav id="menu">
             <div id="logo" class="vertical-center"><a href="index.html">Neyen Aponte</a></div>
             <ul class="vertical-center">
-                <li><a href="#inicio" onclick="Show('inicio')"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                <li><a href="#about" onclick="Show('about')"><i class="fa-solid fa-address-card"></i> Sobre Mi</a></li>
-                <li><a href="#projects" onclick="Show('projects')"><i class="fa-solid fa-list-check"></i> Proyectos</a></li>
-                <li><a href="#documents" onclick="Show('documents')"><i class="fa-solid fa-list-check"></i> Documentos</a></li>
-                <li><a href="#contact" onclick="Show('contact')"><i class="fa-solid fa-at"></i> Contacto</a></li>
+                <li><a href="#" onclick="Show('inicio')"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="#" onclick="Show('about')"><i class="fa-solid fa-address-card"></i> Sobre Mi</a></li>
+                <li><a href="#" onclick="Show('knowing')"><i class="fa-solid fa-brain"></i> Conocimientos</a></li>
+                <li><a href="#" onclick="Show('projects')"><i class="fa-solid fa-list-check"></i> Proyectos</a></li>
+                <li><a href="#" onclick="Show('documents')"><i class="fa-solid fa-file-powerpoint"></i> Documentos</a></li>
+                <li><a href="#" onclick="Show('contact')"><i class="fa-solid fa-at"></i> Contacto</a></li>
             </ul>
         </nav>
     </header>
+    <!-- Inicio de mi portafolio-->
     <div id="inicio" class="cuerpo inicio page-visible">Inicio</div>
     <div id="about" class="cuerpo about">Sobre Mi</div>
     <div id="projects" class="cuerpo projects">Proyectos</div>
     <div id="contact" class="cuerpo contact">Contacto</div>
+    <div id="knowing" class="cuerpo knowing">Conocimientos</div>
     <div id="documents" class="cuerpo documents">Documentos</div>
 </body>
 </html>
@@ -34,6 +37,8 @@
     function Show(name){
         idActual = document.getElementById(name);
         if(idAnterior != null) idAnterior.classList.add('page-moveUp');
+        idActual.style.zIndex = "0";
+        if(idAnterior != null)idAnterior.style.zIndex = "1";
         idActual.classList.add('page-visible');
         idActual.classList.remove('page-moveUp');
         idAnterior = idActual;
@@ -63,19 +68,43 @@
         to { transform: translateY(-100%); }
     }
     .inicio{
-        background-color: rgba(154, 70, 70, 0.3);
+        background-image: linear-gradient(to right, rgba(104, 127, 195, 0.5), rgba(109, 179, 242, .5)), url('images/fondo.jpg');
+        background-size: cover, contain;
+        background-position: center;
+        background-repeat: no-repeat, no-repeat;
     }
     .about{
-        background-color: rgba(127, 203, 179, 0.3);
+        background-image: linear-gradient(to right, rgba(104, 127, 195, 0.5), rgba(109, 179, 242, .5)), url('images/fondo2.jpg');
+        background-size: cover, contain;
+        background-position: center;
+        background-repeat: no-repeat, no-repeat;
     }
     .documents{
-        background-color: rgba(100, 142, 185, 0.3);
+        background-image: linear-gradient(to right, rgba(104, 127, 195, 0.5), rgba(109, 179, 242, .5)), url('images/fondo3.jpg');
+        background-size: cover, contain;
+        background-position: center;
+        background-repeat: no-repeat, no-repeat;
     }
     .projects{
-        background-color: rgba(230, 243, 160, 0.3);
+        background-image: linear-gradient(to right, rgba(104, 127, 195, 0.5), rgba(109, 179, 242, .5)), url('images/fondo4.jpg');
+        background-size: cover, contain;
+        background-position: center;
+        background-repeat: no-repeat, no-repeat;
+    }
+    .knowing{
+        background-image: linear-gradient(to right, rgba(104, 127, 195, 0.5), rgba(109, 179, 242, .5)), url('images/fondo5.jpg');
+        background-size: cover, contain;
+        background-position: center;
+        background-repeat: no-repeat, no-repeat;
+    }
+    .contact{
+        background-image: linear-gradient(to right, rgba(104, 127, 195, 0.5), rgba(109, 179, 242, .5)), url('images/fondo6.jfif');
+        background-size: cover, contain;
+        background-position: center;
+        background-repeat: no-repeat, no-repeat;
     }
     #menu{
-        z-index:1;
+        z-index:2;
         position:absolute;
         width: 100%;
         background-color: rgba(0,0,0,.8);
@@ -93,11 +122,11 @@
     }
     #menu ul li a{
         text-decoration: none;
-        color: aliceblue;
+        color: #b3c2e1;
         margin: 5px;
     }
     #menu ul li a:hover{
-        color: antiquewhite;
+        color: #6a90dc;
         transition: 0.5s;
     }
     #logo{
@@ -107,7 +136,7 @@
     }
     #logo a{
         text-decoration: none;
-        color: aliceblue;
+        color: #b3c2e1;
         margin: 5px;
     }
     .vertical-center {
