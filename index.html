@@ -10,27 +10,74 @@
 <body>
     <header>
         <nav id="menu">
-            <div id="logo" class="vertical-center">Neyen Aponte</div>
+            <div id="logo" class="vertical-center"><a href="index.html">Neyen Aponte</a></div>
             <ul class="vertical-center">
-                <li><a href="#inicio" class=""><i class="fa-solid fa-house"></i> Inicio</a></li>
-                <li><a href="#about"><i class="fa-solid fa-address-card"></i> Sobre Mi</a></li>
-                <li><a href="#projects"><i class="fa-solid fa-list-check"></i> Proyectos</a></li>
-                <li><a href="#contact"><i class="fa-solid fa-at"></i> Contacto</a></li>
+                <li><a href="#inicio" onclick="Show('inicio')"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="#about" onclick="Show('about')"><i class="fa-solid fa-address-card"></i> Sobre Mi</a></li>
+                <li><a href="#projects" onclick="Show('projects')"><i class="fa-solid fa-list-check"></i> Proyectos</a></li>
+                <li><a href="#documents" onclick="Show('documents')"><i class="fa-solid fa-list-check"></i> Documentos</a></li>
+                <li><a href="#contact" onclick="Show('contact')"><i class="fa-solid fa-at"></i> Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <div id="inicio"></div>
-    <div id="about"></div>
-    <div id="projects"></div>
-    <div id="contact"></div>
+    <div id="inicio" class="cuerpo inicio page-visible">Inicio</div>
+    <div id="about" class="cuerpo about">Sobre Mi</div>
+    <div id="projects" class="cuerpo projects">Proyectos</div>
+    <div id="contact" class="cuerpo contact">Contacto</div>
+    <div id="documents" class="cuerpo documents">Documentos</div>
 </body>
 </html>
+<script>
+    var idActual = "inicio";
+    var idAnterior = null;
+    Show("inicio");
+    function Show(name){
+        idActual = document.getElementById(name);
+        if(idAnterior != null) idAnterior.classList.add('page-moveUp');
+        idActual.classList.add('page-visible');
+        idActual.classList.remove('page-moveUp');
+        idAnterior = idActual;
+    }
+</script>
 <style>
     body{
         padding: 0;
         margin: 0;
     }
+    .cuerpo{
+        position: absolute;
+        display: none;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+    }
+    .page-moveUp {
+        animation: moveUp .6s ease both;
+    }
+    .page-visible {
+        display: block;
+    }
+    @keyframes moveUp {
+        from { }
+        to { transform: translateY(-100%); }
+    }
+    .inicio{
+        background-color: rgba(154, 70, 70, 0.3);
+    }
+    .about{
+        background-color: rgba(127, 203, 179, 0.3);
+    }
+    .documents{
+        background-color: rgba(100, 142, 185, 0.3);
+    }
+    .projects{
+        background-color: rgba(230, 243, 160, 0.3);
+    }
     #menu{
+        z-index:1;
+        position:absolute;
+        width: 100%;
         background-color: rgba(0,0,0,.8);
         color: aliceblue;
         height: 50px;
@@ -57,6 +104,11 @@
         position: relative;
         float:left;
         margin-left: 5px;
+    }
+    #logo a{
+        text-decoration: none;
+        color: aliceblue;
+        margin: 5px;
     }
     .vertical-center {
         margin: 0;
